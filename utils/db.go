@@ -32,7 +32,7 @@ func initDb(config *Config) {
 	dbname := dbConfig.DbName
 
 	connstr := fmt.Sprintf("%s:%s@%s/%s?charset=utf8&parseTime=true", user, pwd, host, dbname)
-	print(connstr)
+
 	var err error
 	db, err = gorm.Open("mysql", connstr)
 	if err != nil {
