@@ -11,6 +11,7 @@ import (
 func main() {
 	config := utils.GetConfiguration()
 	utils.Init(config)
-	http.HandleFunc("/searchMaterial", handler.SearchMaterial)
+	http.HandleFunc("/searchStudentMaterial", handler.SearchStudentMaterial)
+	http.HandleFunc("/searchTeacherMaterial", handler.SearchTeacherMaterial)
 	log.Fatal(http.ListenAndServe(config.ServerPort, nil))
 }
