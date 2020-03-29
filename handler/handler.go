@@ -26,9 +26,9 @@ func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
 		grade = gradeVal
 	}
 
-	subject := keys.Get("subject")
+	subjectArray, _ := keys["subject[]"]
 
-	studentRecords, err := models.GetStudentRecords(grade, subject)
+	studentRecords, err := models.GetStudentRecords(grade, subjectArray)
 	if err != nil {
 		resp.WriteHeader(500)
 		return
