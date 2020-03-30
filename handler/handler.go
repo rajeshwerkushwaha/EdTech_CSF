@@ -48,11 +48,10 @@ func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
 func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
 	keys := req.URL.Query()
 	resp.Header().Add("Content-Type", "application/json")
-	var useCase string
 
-	useCase = keys.Get("use_case")
+	useCaseArray, _ := keys["use_case[]"]
 
-	teacherRecords, err := models.GetTeacherRecords(useCase)
+	teacherRecords, err := models.GetTeacherRecords(useCaseArray)
 	if err != nil {
 		resp.WriteHeader(500)
 		return
@@ -67,3 +66,5 @@ func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
 	resp.WriteHeader(200)
 	resp.Write(jsonData)
 }
+
+
