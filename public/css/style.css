@@ -1,0 +1,39 @@
+.custom-margin {
+  margin-top: 8px;
+}
+
+.custom-grey {
+  background-color:#e3e1e1;
+}
+
+.custom-border-radius {
+  border-radius: 5px;
+}
+
+.custom-hidden {
+  display: none;
+}
+
+.custom-data-box {
+  background-color: #c9daf8;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* Media Queries for */
+
+@media only screen and (max-width: 768px) {
+  .custom-fixed-size {
+    min-width: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #filter-column {
+    width: 40% !important;
+  }
+
+  #data-column {
+    width: 60% !important;
+  }
+}

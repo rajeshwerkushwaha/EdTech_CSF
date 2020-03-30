@@ -3,38 +3,118 @@
 <html>
   <head>
     <title>EdTech</title>
-    <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <script defer src="./js/script.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-4">
-          <img id="logo-img" src="http://place-puppy.com/150x150">
+    <div class="ui grid container middle aligned">
+      <div class="custom-margin center aligned row">
+        <div class="right aligned eight wide column">
+          <img id="logo-img" src="http://place-puppy.com/75x75">
         </div>
-        <div class="col-8">
-          <h1>Content</h1>
+        <div class="left aligned eight wide column">
+          <h2>MHRD</h2>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-2">Home</div>
-        <div class="col-2">How to use</div>
-        <div class="col-2">Contact Us</div>
-        <div class="col-4"></div>
-        <div class="col-2">English / Hindi</div>
+        <div class="three wide column">Home</div>
+        <div class="three wide column">How to use</div>
+        <div class="three wide column">Contact Us</div>
+        <div class="four wide column"></div>
+        <div class="three wide column">English / Hindi</div>
       </div>
+
       <div class="row">
-        <div class="col-6 text-right">I want content for</div>
-        <div class="col-6"><input></div>
-      </div>
-      <div class="row">
-        <div class="col-6 text-right">Who are currently studying in grade</div>
-        <div class="col-6"><input></div>
-      </div>
-      <div class="row">
-        <div class="col-6 text-right">For the subjects</div>
-        <div class="col-6"><input></div>
+        <!-- FILTER COLUMN -->
+        <div id="filter-column" class="four wide column custom-border-radius custom-fixed-size">
+          <div class="center aligned row ">
+            <h2>Filters</h2>
+          </div>
+
+          <div class="custom-margin center aligned two column row">
+            <div class="right aligned column">I want content for</div>
+            <div class="left aligned column">
+              <select id="user-dropdown" class="ui fluid dropdown">
+                <option value="">Please Select</option>
+                <option value=1>Student</option>
+                <option value=0>Teacher</option>
+              </select>
+            </div>
+          </div>
+    
+          <div id="grade-row" class="center aligned two column row custom-margin custom-hidden">
+            <div class="right aligned column">Who are currently studying in grade</div>
+            <div class="left aligned column">
+              <select id="grade-dropdown" name="grade-select" class="ui fluid search selection dropdown">
+                <option value="">Please Select</option>
+                <option value="0">KG</option>
+                <option value="1">I</option>
+                <option value="2">II</option>
+                <option value="3">III</option>
+                <option value="4">IV</option>
+                <option value="5">V</option>
+                <option value="6">VI</option>
+                <option value="7">VII</option>
+                <option value="8">VIII</option>
+                <option value="9">IX</option>
+                <option value="10">X</option>
+                <option value="11">XI</option>
+                <option value="12">XII</option>
+                <option value="14">Test</option>
+                <option value="15">Speaking/Reading</option>
+              </select>
+            </div>
+          </div>
+    
+          <div id="subject-row" class="center aligned two column row custom-margin custom-hidden">
+            <div class="right aligned column">For the subjects</div>
+            <div class="left aligned column">
+              <select id="subject-dropdown" name="subject-select" multiple="" class="ui fluid search selection dropdown">
+                <option value="">Please Select</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="English">English</option>
+              </select>
+            </div>
+          </div>
+    
+          <div id="usecase-row" class="center aligned two column row custom-margin custom-hidden">
+            <div class="right aligned column">For what use case do you want resources</div>
+            <div class="left aligned column">
+              <select id="usecase-dropdown" multiple="" name="usecase-select" class="ui fluid search selection dropdown">
+                <option value="">Please Select</option>
+                <option value="Platform for virtual classrooms">Platform for virtual classrooms</option>
+                <option value="Teacher Professional Development">Teacher Professional Development</option>
+                <option value="Assessment Tools">Assessment Tools</option>
+                <option value="Special Needs">Special Needs</option>
+              </select>
+            </div>
+          </div>
+    
+          <div id="submit-row" class="row custom-margin custom-hidden">
+            <div class="center aligned column">
+              <button id="search-button" class="ui fluid primary button">
+                Search Content
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- CONTENT COLUMN -->
+        <div id="data-column" class="twelve wide column">
+          <div id="data-grid" class="ui grid container">
+            <div class="row custom-data-box">
+              <div class="six wide column">
+                <div class="row">Name</div>
+                <div class="row">Place</div>
+                <div class="row">Animal</div>
+              </div>
+              <div class="ten wide column">test2</div>
+            </div>
+          </div>
       </div>
     </div>
   </body>  
