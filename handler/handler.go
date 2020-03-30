@@ -46,5 +46,24 @@ func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
 
 // SearchTeacherMaterial returns content after filtering from TeacherContent
 func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
+	keys := req.URL.Query()
+	resp.Header().Add("Content-Type", "application/json")
+	var useCase string
 
+	useCase = keys.Get("use_case")
+
+	teacherRecords, err := models.GetTeacherRecords(useCase)
+	if err != nil {
+		resp.WriteHeader(500)
+		return
+	}
+
+	jsonData, err := json.Marshal(teacherRecords)
+	if err != nil {
+		resp.WriteHeader(500)
+		return
+	}
+
+	resp.WriteHeader(200)
+	resp.Write(jsonData)
 }
