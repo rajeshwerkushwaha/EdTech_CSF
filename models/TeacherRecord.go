@@ -19,15 +19,16 @@ func (TeacherRecord) TableName() string {
 }
 
 // GetTeacherRecords returns records fetched from database
-func GetTeacherRecords(useCase string) ([]*TeacherRecord, error) {
+func GetTeacherRecords(useCaseArray []string) ([]*TeacherRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&TeacherRecord{})
 	var teacherRecords []*TeacherRecord
 
-	if useCase != "" {
-		tx = tx.Where("use_case = ?", useCase)
+	if len(useCaseArray) != 0 {
+		tx = tx.Where("use_case in (?)", useCaseArray)
 	}
 
 	tx.Find(&teacherRecords)
 	return teacherRecords, nil
 }
+
