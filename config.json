@@ -1,0 +1,12 @@
+{
+	"Stage":       "prod",
+	"LogFileName": "./edtech_prod.log",
+	"LogMaxSize":  50,
+	"LogLevel":    "info",
+	"DbUser":      "root",
+	"DbPassword":  "root",
+	"DbHost":      "tcp(db:3306)",
+	"DbName":      "edtech_csf",
+	"ServerPort":  ":8000",
+	"CacheSize":   1000
+}
