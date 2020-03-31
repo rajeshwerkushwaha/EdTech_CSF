@@ -108,7 +108,7 @@ populateStudentData = (data) => {
     let element = `<div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
                       <div class="four wide column">
                         <div class="row">${content_title}</div>
-                        <div class="row">${content_grade}</div>
+                        <div class="row">Grade ${content_grade}</div>
                         <div class="row">${content_subject}</div>
                       </div>
                       <div class="twelve wide column custom-description">${title_to_description[content_title]}</div>

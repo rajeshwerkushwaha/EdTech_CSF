@@ -41,8 +41,24 @@
   font-size: 1rem;
 }
 
-.ui.input {
-  font-size: 1px;
+.custom-height-15 {
+  height: 15vh;
+}
+
+.custom-height-10 {
+  height: 10vh;
+}
+
+.custom-height-75 {
+  height: 75vh;
+}
+
+.custom-overflow {
+  overflow-y: auto;
+}
+
+#logo-img {
+  border-radius: 50%;
 }
 
 /* Media Queries */
@@ -54,5 +70,9 @@
 
   #data-column {
     width: 60% !important;
+  }
+
+  .custom-description {
+    display: none !important;
   }
 }
