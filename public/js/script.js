@@ -66,7 +66,7 @@ populateTeacherData = (data) => {
                         <div class="row">${content_usecase}</div>
                         <div class="row"></div>
                       </div>
-                      <div class="twelve wide column">${title_to_description[content_title]}</div>
+                      <div class="twelve wide column custom-description">${title_to_description[content_title]}</div>
                     </div>`
     $('#data-grid').append(element);
   }
@@ -105,7 +105,7 @@ populateStudentData = (data) => {
                         <div class="row">${content_grade}</div>
                         <div class="row">${content_subject}</div>
                       </div>
-                      <div class="twelve wide column">${title_to_description[content_title]}</div>
+                      <div class="twelve wide column custom-description">${title_to_description[content_title]}</div>
                     </div>`
     $('#data-grid').append(element);
   }
