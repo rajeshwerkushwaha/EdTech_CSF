@@ -17,7 +17,32 @@
 .custom-data-box {
   background-color: #c9daf8;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 10px;
+}
+
+.custom-description {
+  border-left: 1px solid black;
+}
+
+.custom-heading{
+  color: #4983D6;
+}
+
+.custom-navbar {
+  color: white;
+  background-color: #20296D;
+}
+
+.custom-wrapper {
+  margin-top: 50px;
+}
+
+#submit-row {
+  margin-top: 20px;
+}
+
+#data-grid {
+  padding-left: 50px;
 }
 
 /* Media Queries for */
