@@ -11,6 +11,8 @@ type TeacherRecord struct {
 	ContentDescription string `gorm:"column:content_description;not null" json:"content_description"`
 	ContentLink        string `gorm:"column:content_link;not null" json:"content_link"`
 	UseCase            string `gorm:"column:use_case;not null" json:"use_case"`
+	Cost               string `gorm:"column:cost;not null" json:"cost"`
+	Device             uint32 `gorm:"column:device;not null" json:"device"`
 }
 
 // TableName returns MySQL table name for this model
@@ -31,4 +33,3 @@ func GetTeacherRecords(useCaseArray []string) ([]*TeacherRecord, error) {
 	tx.Find(&teacherRecords)
 	return teacherRecords, nil
 }
-
