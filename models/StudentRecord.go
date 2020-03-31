@@ -10,8 +10,8 @@ type StudentRecord struct {
 	ContentTitle       string `gorm:"column:content_title;not null" json:"content_title"`
 	ContentDescription string `gorm:"column:content_description;not null" json:"content_description"`
 	ContentLink        string `gorm:"column:content_link;not null" json:"content_link"`
-	StartGrade         uint32 `gorm:"column:startGrade;not null" json:"startGrade"`
-	EndGrade           uint32 `gorm:"column:endGrade;not null" json:"endGrade"`
+	StartGrade         uint32 `gorm:"column:start_grade;not null" json:"start_grade"`
+	EndGrade           uint32 `gorm:"column:end_grade;not null" json:"end_grade"`
 	Subject            string `gorm:"column:subject;not null" json:"subject"`
 }
 
@@ -27,7 +27,7 @@ func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, e
 	var studentRecords []*StudentRecord
 
 	if grade != utils.ALLGRADES {
-		tx = tx.Where("startGrade <= ? AND endGrade >= ?", grade, grade)
+		tx = tx.Where("start_grade <= ? AND end_grade >= ?", grade, grade)
 	}
 	if len(subjectArray) != 0 {
 		tx = tx.Where("subject in (?)", subjectArray)
