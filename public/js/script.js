@@ -17,6 +17,10 @@ userDropDownChange = (val) => {
   }
 }
 
+openInNewTab = (link) => {
+  window.open(link, '_blank');
+}
+
 populateData = (data, status) => {
   if (status !== "success")
     return;
@@ -60,7 +64,7 @@ populateTeacherData = (data) => {
   }
   for (content_title in title_to_usecase) {
     let content_usecase = uniqueList(title_to_usecase[content_title]);
-    let element = `<div class="row custom-data-box">
+    let element = `<div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
                       <div class="four wide column">
                         <div class="row">${content_title}</div>
                         <div class="row">${content_usecase}</div>
@@ -76,6 +80,7 @@ populateStudentData = (data) => {
   let title_to_subject = {};
   let title_to_grade = {};
   let title_to_description = {};
+  let title_to_link = {};
 
   for (obj of data) {
     let content_title = obj['content_title'];
@@ -83,6 +88,7 @@ populateStudentData = (data) => {
     if (!(content_title in title_to_subject)) {
       title_to_subject[content_title] = [];
       title_to_description[content_title] = obj['content_description'];
+      title_to_link[content_title] = obj['content_link'];
     }
     title_to_subject[content_title].push(obj['subject']);
 
@@ -99,7 +105,7 @@ populateStudentData = (data) => {
     let content_grade = uniqueList(title_to_grade[content_title]);
     let content_subject = uniqueList(title_to_subject[content_title]);
 
-    let element = `<div class="row custom-data-box">
+    let element = `<div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
                       <div class="four wide column">
                         <div class="row">${content_title}</div>
                         <div class="row">${content_grade}</div>
