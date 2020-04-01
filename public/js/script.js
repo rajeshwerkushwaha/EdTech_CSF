@@ -70,7 +70,7 @@ populateTeacherData = (data) => {
         <div class="row custom-forced-width">${title_to_description[content_title]}</div>
         <div class="row custom-forced-width">
           <div class="ui stackable four column grid">
-            <div class="column">${title_to_usecase[content_title]}</div>
+            <div class="column">${content_usecase.join(", ")}</div>
             <div class="column"></div>
             <div class="column"></div>
             <div class="column"></div>
@@ -117,8 +117,8 @@ populateStudentData = (data) => {
       <div class="row custom-forced-width">${title_to_description[content_title]}</div>
       <div class="row custom-forced-width">
         <div class="ui stackable four column grid">
-          <div class="column">Grade ${title_to_grade[content_title]}</div>
-          <div class="column">${title_to_subject[content_title]}</div>
+          <div class="column">Grade ${content_grade.join(", ")}</div>
+          <div class="column">${content_subject.join(", ")}</div>
           <div class="column"></div>
           <div class="column"></div>
         </div>
