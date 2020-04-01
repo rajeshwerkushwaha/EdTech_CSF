@@ -21,13 +21,27 @@ func (TeacherRecord) TableName() string {
 }
 
 // GetTeacherRecords returns records fetched from database
-func GetTeacherRecords(useCaseArray []string) ([]*TeacherRecord, error) {
+func GetTeacherRecords(useCaseArray []string, device uint32, cost uint32) ([]*TeacherRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&TeacherRecord{})
 	var teacherRecords []*TeacherRecord
 
 	if len(useCaseArray) != 0 {
 		tx = tx.Where("use_case in (?)", useCaseArray)
+	}
+
+	if device != utils.ALLDEVICES {
+		tx = tx.Where("device = ?", device)
+	}
+
+	if cost != utils.ALLCOSTS {
+		freeCostString := utils.FREECOST;
+		costString := utils.ParseToString(cost)
+		if freeCostString == costString {
+			tx = tx.Where("cost = ?",freeCostString)
+		} else {
+			tx = tx.Where("cost <> ?",freeCostString)
+		}
 	}
 
 	tx.Find(&teacherRecords)

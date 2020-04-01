@@ -23,7 +23,7 @@ func (StudentRecord) TableName() string {
 }
 
 // GetStudentRecords returns records fetched from database
-func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, error) {
+func GetStudentRecords(grade uint32, subjectArray []string, device uint32, cost uint32) ([]*StudentRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&StudentRecord{})
 	var studentRecords []*StudentRecord
@@ -31,8 +31,23 @@ func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, e
 	if grade != utils.ALLGRADES {
 		tx = tx.Where("start_grade <= ? AND end_grade >= ?", grade, grade)
 	}
+
 	if len(subjectArray) != 0 {
 		tx = tx.Where("subject in (?)", subjectArray)
+	}
+
+	if device != utils.ALLDEVICES {
+		tx = tx.Where("device = ?", device)
+	}
+
+	if cost != utils.ALLCOSTS {
+		freeCostString := utils.FREECOST;
+		costString := utils.ParseToString(cost)
+		if freeCostString == costString {
+			tx = tx.Where("cost = ?",freeCostString)
+		} else {
+			tx = tx.Where("cost <> ?",freeCostString)
+		}
 	}
 
 	tx.Find(&studentRecords)
