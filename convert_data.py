@@ -1,8 +1,14 @@
 import csv
+import sys
+
+if(len(sys.argv) != 3):
+    sys.exit("Error: Not enough arguments. There should be 2 arguments for input filename and output filename respectively")
+input_filename = sys.argv[1] #'Website_CBSE_EdTech_caterorization.csv'
+output_filename = sys.argv[2] #'final_edtech_csf.csv'
 
 input_data = []
 content_description_col = 2 # can be changed based on its position in the input file.
-input_filename = 'Website CBSE EdTech caterorization.csv'
+
 
 def create_multiple_rows(input_row,cell_data,multi_count):
     cell_data_list = []
@@ -15,9 +21,9 @@ def create_multiple_rows(input_row,cell_data,multi_count):
         row_data = []
         for count in range(len(input_row)):
             if count == multi_count:
-                row_data.append(data)
+                row_data.append(data.strip())
             else:
-                row_data.append(input_row[count])
+                row_data.append(input_row[count].strip())
         print(row_data)
         multi_rows.append(row_data)
     print(multi_rows)
@@ -39,12 +45,12 @@ with open(input_filename,'r') as csvfile:
                 for row in multi_rows:
                     input_data.append(row)
             else:
-                row_data.append(input_row[count])
+                row_data.append(input_row[count].strip())
         input_data.append(row_data)
 
 print(input_data)
 
-with open('final_edtech_csf.csv', mode='w+') as final_file:
+with open(output_filename, mode='w+') as final_file:
     file_writer = csv.writer(final_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
     file_writer.writerows(input_data)
 
