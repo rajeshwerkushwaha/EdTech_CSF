@@ -1,0 +1,27 @@
+version: '3.6'
+services:
+  server:
+    container_name: edtech_csf_server
+    build: .
+    volumes:
+      - $GOPATH:/go
+      - .:/go/src/github.com/PaiAkshay998/EdTech_CSF
+    ports:
+      - "6002:8000"
+    depends_on:
+      - db
+    environment:
+      EDTECH_STAGE: "PROD"
+  db:
+    container_name: edtech_csf_db
+    image: mysql:5.7
+    volumes:
+      - mysql-data:/var/lib/mysql
+    env_file:
+      - .env
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${DB_PASS}
+volumes:
+  mysql-data:
+    name: edtech-mysql-data
