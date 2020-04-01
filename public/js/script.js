@@ -64,14 +64,20 @@ populateTeacherData = (data) => {
   }
   for (content_title in title_to_usecase) {
     let content_usecase = uniqueList(title_to_usecase[content_title]);
-    let element = `<div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
-                      <div class="four wide column">
-                        <div class="row">${content_title}</div>
-                        <div class="row">${content_usecase}</div>
-                        <div class="row"></div>
-                      </div>
-                      <div class="twelve wide column custom-description">${title_to_description[content_title]}</div>
-                    </div>`
+    let element = `
+      <div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
+        <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
+        <div class="row custom-forced-width">${title_to_description[content_title]}</div>
+        <div class="row custom-forced-width">
+          <div class="ui stackable four column grid">
+            <div class="column">${title_to_usecase[content_title]}</div>
+            <div class="column"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+          </div>
+        </div>
+      </div>`;
+
     $('#data-grid').append(element);
   }
 }
@@ -105,14 +111,20 @@ populateStudentData = (data) => {
     let content_grade = uniqueList(title_to_grade[content_title]);
     let content_subject = uniqueList(title_to_subject[content_title]);
 
-    let element = `<div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
-                      <div class="four wide column">
-                        <div class="row">${content_title}</div>
-                        <div class="row">Grade ${content_grade}</div>
-                        <div class="row">${content_subject}</div>
-                      </div>
-                      <div class="twelve wide column custom-description">${title_to_description[content_title]}</div>
-                    </div>`
+    let element = `
+    <div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
+      <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
+      <div class="row custom-forced-width">${title_to_description[content_title]}</div>
+      <div class="row custom-forced-width">
+        <div class="ui stackable four column grid">
+          <div class="column">Grade ${title_to_grade[content_title]}</div>
+          <div class="column">${title_to_subject[content_title]}</div>
+          <div class="column"></div>
+          <div class="column"></div>
+        </div>
+      </div>
+    </div>
+    `
     $('#data-grid').append(element);
   }
 }

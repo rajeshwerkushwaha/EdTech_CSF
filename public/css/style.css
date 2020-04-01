@@ -1,5 +1,5 @@
 .custom-margin {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .custom-grey {
@@ -15,13 +15,19 @@
 }
 
 .custom-data-box {
-  background-color: #c9daf8;
-  border: 1px solid black;
-  border-radius: 10px;
+  border: 1px solid #c4c8d8;
+  box-shadow: 0 2px 5px 0 #F5F6FA;
+  border-radius: 0.2rem;
+  height: fit-content;
+  padding: 4px !important;
+}
+
+.custom-forced-width {
+  width: 100% !important;
 }
 
 .custom-description {
-  border-left: 1px solid black;
+  border-left: 1px solid #c4c8d8;
 }
 
 .custom-heading{
