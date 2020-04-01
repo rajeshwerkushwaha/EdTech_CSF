@@ -15,6 +15,8 @@ userDropDownChange = (val) => {
     $('#subject-row').removeClass('custom-hidden');
     $('#grade-row').removeClass('custom-hidden');
   }
+  $('#cost-row').removeClass('custom-hidden');
+  $('#device-row').removeClass('custom-hidden');
 }
 
 openInNewTab = (link) => {
@@ -43,6 +45,22 @@ convertGrade = (grade) => {
     return grade;
 }
 
+convertCost = (cost) => {
+  if (cost == "0")
+    return "Free of cost";
+  else
+    return "Free till ${cost}";
+}
+
+convertDevice = (device) => {
+  if (device == "1")
+    return "Smartphone";
+  else if (device == "2")
+    return "Laptop";
+  else
+    return "Smartphone,Laptop";
+}
+
 uniqueList = (dataList) => {
   return dataList.filter((item, i, ar) => ar.indexOf(item) === i);
 }
@@ -51,6 +69,8 @@ populateTeacherData = (data) => {
   let title_to_usecase = {};
   let title_to_description = {};
   let title_to_link = {};
+  let title_to_cost = {};
+  let title_to_device = {};
 
   for (obj of data) {
     let content_title = obj['content_title'];
@@ -59,6 +79,8 @@ populateTeacherData = (data) => {
       title_to_usecase[content_title] = [];
       title_to_description[content_title] = obj['content_description'];
       title_to_link[content_title] = obj['content_link'];
+      title_to_cost[content_title] = convertCost(obj['cost']);
+      title_to_device[content_title] = convertDevice(obj['device']);
     }
     title_to_usecase[content_title].push(obj['use_case']);
   }
@@ -71,8 +93,8 @@ populateTeacherData = (data) => {
         <div class="row custom-forced-width">
           <div class="ui stackable four column grid">
             <div class="column">${title_to_usecase[content_title]}</div>
-            <div class="column"></div>
-            <div class="column"></div>
+            <div class="column">${title_to_cost[content_title]}</div>
+            <div class="column">${title_to_device[content_title]}</div>
             <div class="column"></div>
           </div>
         </div>
@@ -87,6 +109,8 @@ populateStudentData = (data) => {
   let title_to_grade = {};
   let title_to_description = {};
   let title_to_link = {};
+  let title_to_cost = {};
+  let title_to_device = {};
 
   for (obj of data) {
     let content_title = obj['content_title'];
@@ -95,6 +119,8 @@ populateStudentData = (data) => {
       title_to_subject[content_title] = [];
       title_to_description[content_title] = obj['content_description'];
       title_to_link[content_title] = obj['content_link'];
+      title_to_cost[content_title] = convertCost(obj['cost']);
+      title_to_device[content_title] = convertDevice(obj['device']);
     }
     title_to_subject[content_title].push(obj['subject']);
 
@@ -119,8 +145,8 @@ populateStudentData = (data) => {
         <div class="ui stackable four column grid">
           <div class="column">Grade ${title_to_grade[content_title]}</div>
           <div class="column">${title_to_subject[content_title]}</div>
-          <div class="column"></div>
-          <div class="column"></div>
+          <div class="column">${title_to_cost[content_title]}</div>
+          <div class="column"> ${title_to_device[content_title]}</div>
         </div>
       </div>
     </div>
@@ -130,11 +156,15 @@ populateStudentData = (data) => {
 }
 
 onSearch = () => {
+  let cost = $('#cost-dropdown').dropdown('get value') || 2;
+  let device = $('#cost-dropdown').dropdown('get value') || 3;
   if (user == TEACHER) {
     $.ajax({
       url: 'http://localhost:8000/searchTeacherMaterial',
       data: {
-        use_case: $('#usecase-dropdown').dropdown('get values')
+        use_case: $('#usecase-dropdown').dropdown('get values'),
+        cost: cost,
+        device: device
       },
       success: populateData,
     });
@@ -145,7 +175,9 @@ onSearch = () => {
       url: 'http://localhost:8000/searchStudentMaterial',
       data: {
         subject: $('#subject-dropdown').dropdown('get values'),
-        grade: grade
+        grade: grade,
+        cost: cost,
+        device: device
       },
       success: populateData,
     });
@@ -161,3 +193,5 @@ $('#user-dropdown').dropdown({
 $('#grade-dropdown').dropdown();
 $('#subject-dropdown').dropdown();
 $('#usecase-dropdown').dropdown();
+$('#cost-dropdown').dropdown();
+$('#device-dropdown').dropdown();
