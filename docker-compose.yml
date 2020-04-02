@@ -7,7 +7,7 @@ services:
       - $GOPATH:/go
       - .:/go/src/github.com/PaiAkshay998/EdTech_CSF
     ports:
-      - "6002:8000"
+      - "8000:8000"
     depends_on:
       - db
     environment:
@@ -16,12 +16,21 @@ services:
     container_name: edtech_csf_db
     image: mysql:5.7
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./mysql-data:/var/lib/mysql
     env_file:
       - .env
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
+  phpmyadmin:
+    container_name: edtech_csf_pma
+    image: phpmyadmin/phpmyadmin
+    env_file:
+      - .env
+    ports:
+      - "9040:80"
+    depends_on:
+      - db
 volumes:
   mysql-data:
     name: edtech-mysql-data

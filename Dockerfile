@@ -10,6 +10,6 @@ RUN apt-get update && \
 
 WORKDIR /go/src/github.com/PaiAkshay998/EdTech_CSF
 ADD . /go/src/github.com/PaiAkshay998/EdTech_CSF
-EXPOSE 6002
+EXPOSE 8000
 
 CMD ["/bin/bash", "docker-entry.sh"]
