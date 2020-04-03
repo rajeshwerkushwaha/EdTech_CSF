@@ -57,9 +57,9 @@ uniqueList = (dataList) => {
 parseLink = (linkString) => {
   let linkArray = linkString.split(",");
   if (linkArray.length == 1) {
-    return [linkString, ""];
+    linkArray.push("");
   }
-  let webLink = (linkArray[0].find("play.google.com") == -1) ? linkArray[0]: linkArray[1];
+  let webLink = (linkArray[0].indexOf("play.google.com") == -1) ? linkArray[0]: linkArray[1];
   let mobileLink = (linkArray[0] == webLink) ? linkArray[1]: linkArray[0];
   return [webLink, mobileLink];
 }
@@ -70,7 +70,7 @@ convertDevice = (device) => {
   else if (device == "2")
     return "Laptop";
   else
-    return "Smartphone,Laptop";
+    return "Smartphone, Laptop";
 }
 
 getLinkToUse = (device, availableLinks) => {
@@ -111,13 +111,13 @@ populateTeacherData = (data) => {
     let element = `
       <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer">
         <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
-        <div class="row custom-forced-width">${title_to_description[content_title]}</div>
-        <div class="row custom-forced-width">
+        <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
+        <div class="row custom-forced-width custom-grey-font">
           <div class="ui stackable four column grid">
-            <div class="column">${content_usecase.join(", ")}</div>
-            <div class="column"></div>
-            <div class="column">${title_to_cost[content_title]}</div>
-            <div class="column">${convertDevice(title_to_device[content_title])}</div>
+            <div class="column custom-grey-font">${content_usecase.join(", ")}</div>
+            <div class="column custom-grey-font"></div>
+            <div class="column custom-grey-font">${title_to_cost[content_title]}</div>
+            <div class="column custom-grey-font">${convertDevice(title_to_device[content_title])}</div>
           </div>
         </div>
       </div>`;
@@ -163,13 +163,13 @@ populateStudentData = (data) => {
     let element = `
     <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer">
       <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
-      <div class="row custom-forced-width">${title_to_description[content_title]}</div>
+      <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
       <div class="row custom-forced-width">
         <div class="ui stackable four column grid">
-          <div class="column">Grade ${content_grade.join(", ")}</div>
-          <div class="column">${content_subject.join(", ")}</div>
-          <div class="column">${title_to_cost[content_title]}</div>
-          <div class="column">${convertDevice(title_to_device[content_title])}</div>
+          <div class="column custom-grey-font">Grade ${content_grade.join(", ")}</div>
+          <div class="column custom-grey-font">${content_subject.join(", ")}</div>
+          <div class="column custom-grey-font">${title_to_cost[content_title]}</div>
+          <div class="column custom-grey-font">${convertDevice(title_to_device[content_title])}</div>
         </div>
       </div>
     </div>
@@ -207,6 +207,12 @@ $("#search-button").click(onSearch);
 $('#user-dropdown').dropdown({
    onChange: userDropDownChange
 });
-$('#grade-dropdown').dropdown();
-$('#subject-dropdown').dropdown();
-$('#usecase-dropdown').dropdown();
+$('#grade-dropdown').dropdown({
+  "clearable": true
+});
+$('#subject-dropdown').dropdown({
+  "clearable": true
+});
+$('#usecase-dropdown').dropdown({
+  "clearable": true
+});

@@ -12,30 +12,45 @@
   </head>
   <body>
     <div class="ui grid container">
-      <div class="custom-margin center aligned row custom-height-15 middle aligned">
-        <div class="right aligned eight wide column">
-          <img id="logo-img" src="http://place-puppy.com/75x75">
+      <div class="custom-margin center aligned row custom-header-height middle aligned">
+        <div class="center aligned column custom-mhrd-logo-row">
+          <img id="logo-img" src="./static/mhrd-logo.png">
         </div>
-        <div class="left aligned eight wide column custom-heading">
-          <h2>MHRD</h2>
+        <div class="left aligned column custom-heading custom-mhrd-text-row">
+          <div class="row">
+            <h2 class="custom-grey-font">Ministry of Human Resource Development</h2>
+          </div>
+          <div class="row">
+            <h4 class="custom-grey-font">Government of India</h4>
+          </div>
         </div>
       </div>
 
-      <div class="row custom-navbar custom-height-10 middle aligned">
-        <div class="three wide column custom-font-size">Home</div>
-        <div class="three wide column custom-font-size">Usage</div>
-        <div class="three wide column custom-font-size">Contact</div>
+      <div class="row custom-border-radius custom-grey custom-grey-font custom-height-10 middle aligned">
+        <div class="three wide column custom-header-font-size custom-center-align">Home</div>
+        <div class="three wide column custom-header-font-size custom-center-align">Usage</div>
+        <div class="three wide column custom-header-font-size custom-center-align">Contact</div>
         <div class="four wide column"></div>
-        <div class="three wide column custom-font-size">Eng / हिं </div>
+        <div class="three wide column custom-header-font-size custom-center-align">Eng / हिं </div>
       </div>
 
       <div id="homepage" class="ui grid">
-        <div class="row center aligned custom-text middle aligned ">This website is an initiative by MHRD to provide access to free content for students and teachers so that learning can effectively take place at home. </div>
+        <div class="custom-center-align custom-grey-font row center aligned custom-text">
+          This website is an initiative by MHRD and Central Square Foundation to provide access to online resources for students and teachers so that learning can effectively take place at home.
+        </div>
          <div class="row ui stackable grid middle aligned">
         <div class="two wide column"></div>
-        <div class="four wide column overflow custom-click-box"><a onClick='showFilters(1);' class="student custom-link">Click here if you are a student/parent</a></div>
+        <div id="custom-click-box" class="four wide column overflow custom-center-align">
+          <a onClick='showFilters(1);' class="student custom-link custom-grey-font custom-header-font-size">
+            Access resources for Students
+          </a>
+        </div>
         <div class="four wide column"></div>
-        <div class="four wide column overflow custom-click-box"><a onClick='showFilters(0);' class="teacher custom-link">Click here if you are a teacher</a></div>
+        <div id="custom-click-box" class="four wide column overflow custom-center-align">
+          <a onClick='showFilters(0);' class="teacher custom-link custom-grey-font custom-header-font-size">
+            Access resources for Teachers
+          </a>
+        </div>
       </div>
     </div>
 
@@ -44,11 +59,11 @@
         <!-- FILTER COLUMN -->
         <div id="filter-column" class="four wide column custom-border-radius custom-fixed-size">
           <div class="center aligned row ">
-            <h2>Filters</h2>
+            <h2 class="custom-grey-font">Filters</h2>
           </div>
 
           <div class="custom-margin center aligned two column row">
-            <div class="right aligned column custom-font-size">I want content for</div>
+            <div class="right aligned column custom-font-size custom-grey-font">I want content for</div>
             <div class="left aligned column">
               <select id="user-dropdown" class="ui fluid dropdown">
                 <option value="">Select</option>
@@ -59,7 +74,7 @@
           </div>
 
           <div id="grade-row" class="center aligned two column row custom-margin ">
-            <div class="right aligned column">Who are currently studying in grade</div>
+            <div class="right aligned column custom-grey-font">Who are currently studying in grade</div>
             <div class="left aligned column">
               <select id="grade-dropdown" name="grade-select" class="ui fluid search selection dropdown">
                 <option value="">Select</option>
@@ -83,7 +98,7 @@
           </div>
 
           <div id="subject-row" class="center aligned two column row custom-margin custom-hidden">
-            <div class="right aligned column">For the subjects</div>
+            <div class="right aligned column custom-grey-font">For the subjects</div>
             <div class="left aligned column">
               <select id="subject-dropdown" name="subject-select" multiple="" class="ui fluid search selection dropdown">
                 <option value="">Select</option>
@@ -95,7 +110,7 @@
           </div>
 
           <div id="usecase-row" class="center aligned two column row custom-margin custom-hidden">
-            <div class="right aligned column">For what use case do you want resources</div>
+            <div class="right aligned column custom-grey-font">For what use case do you want resources</div>
             <div class="left aligned column">
               <select id="usecase-dropdown" multiple="" name="usecase-select" class="ui fluid search selection dropdown">
                 <option value="">Select</option>
