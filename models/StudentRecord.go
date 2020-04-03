@@ -15,6 +15,7 @@ type StudentRecord struct {
 	Subject            string `gorm:"column:subject;not null" json:"subject"`
 	Cost               string `gorm:"column:cost;not null" json:"cost"`
 	Device             uint32 `gorm:"column:device;not null" json:"device"`
+	Logo               string `gorm:"column:logo;not null" json:"logo"`
 }
 
 // TableName returns MySQL table name for this model
