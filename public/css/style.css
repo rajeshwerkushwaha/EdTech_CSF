@@ -1,3 +1,8 @@
+.custom-text {
+  margin-top: 50px;
+  font-size: 15px;
+}
+
 .custom-margin {
   margin-top: 4px;
 }
@@ -6,12 +11,27 @@
   background-color:#e3e1e1;
 }
 
+.custom-link{
+  color: black;
+}
+.custom-link:hover{
+  color: black;
+}
+
 .custom-border-radius {
   border-radius: 5px;
 }
 
 .custom-hidden {
-  display: none;
+  display: none !important;
+}
+
+.custom-click-box {
+  background-color: #c9daf8;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .custom-data-box {
@@ -19,7 +39,8 @@
   box-shadow: 0 2px 5px 0 #F5F6FA;
   border-radius: 0.2rem;
   height: fit-content;
-  padding: 4px !important;
+  padding: 4px;
+  margin: 2px;
 }
 
 .custom-forced-width {
