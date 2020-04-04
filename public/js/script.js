@@ -85,6 +85,13 @@ getLinkToUse = (device, availableLinks) => {
   }
 }
 
+convertUseCase = (useCase) => {
+  if (useCase == "1")   return "Tools for Teaching";
+  if (useCase == "2")   return "Professional Development";
+  if (useCase == "3")   return "Tools for Assessment";
+  if (useCase == "4")   return "Special Needs";
+}
+
 populateTeacherData = (data) => {
   let title_to_usecase = {};
   let title_to_description = {};
@@ -114,7 +121,7 @@ populateTeacherData = (data) => {
         <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
         <div class="row custom-forced-width custom-grey-font">
           <div class="ui stackable three column grid">
-            <div class="column custom-grey-font">${content_usecase.join(", ")}</div>
+            <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/book-icon.svg"></div>${content_usecase.map(convertUseCase).join(", ")}</div>
             <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/price-icon.svg"></div>${title_to_cost[content_title]}</div>
             <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/device-icon.svg"></div>${convertDevice(title_to_device[content_title])}</div>
           </div>
