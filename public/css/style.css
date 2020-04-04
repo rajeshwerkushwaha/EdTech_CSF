@@ -4,7 +4,7 @@
 }
 
 .custom-margin {
-  margin-top: 4px;
+  margin-top: 4px !important;
 }
 
 .custom-grey {
@@ -134,7 +134,7 @@
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 600px) {
   #filter-column {
     width: 100% !important;
   }
