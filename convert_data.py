@@ -19,7 +19,9 @@ def create_multiple_rows(input_row, cell_data, multi_count):
     multi_rows = []
     while cell_data.find(",") != -1:
         position = cell_data.find(",")
-        cell_data_list.append(cell_data[:position])
+        val = cell_data[:position]
+        if val != '':
+            cell_data_list.append(val)
         cell_data = cell_data[position+1:]
     if cell_data != '':
         cell_data_list.append(cell_data)
