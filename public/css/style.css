@@ -82,6 +82,7 @@
   color: #5c5c5c;
 }
 
+
 .custom-header-height {
   height: 15vh;
 }
@@ -92,6 +93,16 @@
 
 .custom-height-75 {
   height: 75vh;
+}
+
+.custom-logo {
+  height: 25px;
+  width: 25px;
+}
+
+.custom-icon-image {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .custom-overflow {
