@@ -27,6 +27,10 @@ openInNewTab = (link) => {
   window.open(link, '_blank');
 }
 
+sameWindowLink = (link) => {
+  window.location = link;
+}
+
 populateData = (data, status) => {
   if (status !== "success")
     return;
@@ -40,7 +44,7 @@ populateData = (data, status) => {
 
 convertGrade = (grade) => {
   if (grade == "0")
-    return "K";
+    return "KG";
   else if (grade == "14")
     return "JEE/NEET";
   else if (grade == "15")
