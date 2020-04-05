@@ -109,6 +109,10 @@
   overflow-y: auto;
 }
 
+.custom-mail{
+  margin-top: 0px;
+}
+
 #logo-img {
   border-radius: 50%;
   max-height: 100%;
