@@ -128,7 +128,7 @@ populateTeacherData = (data) => {
     let linkToUse = getLinkToUse(title_to_device[content_title], title_to_link[content_title]);
 
     let element = `
-      <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer">
+      <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer custom-font-family">
         <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
         <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
         <div class="ui divider"></div>
@@ -180,7 +180,7 @@ populateStudentData = (data) => {
     let linkToUse = getLinkToUse(title_to_device[content_title], title_to_link[content_title]);
 
     let element = `
-    <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer">
+    <div onclick="openInNewTab('${linkToUse}');" class="row custom-data-box custom-margin custom-pointer custom-font-family">
       <div class="row custom-forced-width"><div class="column"><h2>${content_title}</h2></div></div>
       <div class="row custom-forced-width"><div class="column"><h5>${content_grade.join(", ")}</h5></div></div>
       <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>

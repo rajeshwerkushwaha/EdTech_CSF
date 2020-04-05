@@ -82,6 +82,9 @@
   color: #5c5c5c;
 }
 
+.custom-font-family {
+  font-family: 'Josefin Sans', sans-serif;
+}
 
 .custom-header-height {
   height: 15vh;
