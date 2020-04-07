@@ -9,9 +9,9 @@ output_filename = sys.argv[2] #'final_edtech_csf.csv'
 input_data = []
 content_description_col = 2 # can be changed based on its position in the input file.
 if sys.argv[3] == "Student":
-    max_col = 9
+    max_col = 10
 else:
-    max_col = 7
+    max_col = 8
 
 
 def create_multiple_rows(input_row, cell_data, multi_count):
