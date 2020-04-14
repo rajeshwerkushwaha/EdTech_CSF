@@ -13,6 +13,7 @@ type TeacherRecord struct {
 	UseCase            uint32 `gorm:"column:use_case;not null" json:"use_case"`
 	Cost               string `gorm:"column:cost;not null" json:"cost"`
 	Device             uint32 `gorm:"column:device;not null" json:"device"`
+	Medium             string `gorm:"column:medium;not null" json:"medium"`
 }
 
 // TableName returns MySQL table name for this model
@@ -21,13 +22,16 @@ func (TeacherRecord) TableName() string {
 }
 
 // GetTeacherRecords returns records fetched from database
-func GetTeacherRecords(useCaseArray []string) ([]*TeacherRecord, error) {
+func GetTeacherRecords(useCaseArray []string, mediumArray []string) ([]*TeacherRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&TeacherRecord{})
 	var teacherRecords []*TeacherRecord
 
 	if len(useCaseArray) != 0 {
 		tx = tx.Where("use_case in (?)", useCaseArray)
+	}
+	if len(mediumArray) != 0 {
+		tx = tx.Where("medium in (?)", mediumArray)
 	}
 
 	tx.Find(&teacherRecords)

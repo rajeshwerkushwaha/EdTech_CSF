@@ -9,7 +9,7 @@ showFilters = (val) => {
   $('#user-dropdown').dropdown('set selected', [val]);
 }
 
-  userDropDownChange = (val) => {
+userDropDownChange = (val) => {
   user = parseInt(val);
   $('#submit-row').removeClass('custom-hidden');
   if (user == TEACHER) {
@@ -22,14 +22,14 @@ showFilters = (val) => {
   }
 }
 
-   gradeDropDownChange = (val) => {
-     grade = parseInt(val);
-     if (grade != 14 && grade != 15){
-        $('#subject-row').removeClass('custom-hidden');
-     } else {
-      $('#subject-row').addClass('custom-hidden');
-     }
-   }
+gradeDropDownChange = (val) => {
+  grade = parseInt(val);
+  if (grade != 14 && grade != 15){
+    $('#subject-row').removeClass('custom-hidden');
+  } else {
+  $('#subject-row').addClass('custom-hidden');
+  }
+}
 
 openInNewTab = (link) => {
   window.open(link, '_blank');
@@ -110,6 +110,7 @@ populateTeacherData = (data) => {
   let title_to_link = {};
   let title_to_cost = {};
   let title_to_device = {};
+  let title_to_language = {};
 
   for (obj of data) {
     let content_title = obj['content_title'];
@@ -122,9 +123,15 @@ populateTeacherData = (data) => {
       title_to_device[content_title] = obj['device'];
     }
     title_to_usecase[content_title].push(obj['use_case']);
+
+    if (!(content_title in title_to_language)) {
+      title_to_language[content_title] = [];
+    }
+    title_to_language[content_title].push(obj['medium']);
   }
   for (content_title in title_to_usecase) {
     let content_usecase = uniqueList(title_to_usecase[content_title]);
+    let content_language = uniqueList(title_to_language[content_title]);
     let linkToUse = getLinkToUse(title_to_device[content_title], title_to_link[content_title]);
 
     let element = `
@@ -133,11 +140,12 @@ populateTeacherData = (data) => {
         <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
         <div class="ui divider"></div>
         <div class="row custom-forced-width custom-grey-font">
-          <div class="ui stackable three column grid">
+          <div class="ui stackable four column grid">
             <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/book-icon.svg"></div>${content_usecase.map(convertUseCase).join(", ")}</div>
             <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/price-icon.svg"></div>${title_to_cost[content_title]}</div>
             <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/device-icon.svg"></div>${convertDevice(title_to_device[content_title])}</div>
-          </div>
+          <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/language-icon.svg"></div>${content_language.join(", ")}</div>
+        </div>
         </div>
       </div>`;
 
@@ -152,6 +160,7 @@ populateStudentData = (data) => {
   let title_to_link = {};
   let title_to_cost = {};
   let title_to_device = {};
+  let title_to_language = {};
 
   for (obj of data) {
     let content_title = obj['content_title'];
@@ -165,6 +174,11 @@ populateStudentData = (data) => {
     }
     title_to_subject[content_title].push(obj['subject']);
 
+    if (!(content_title in title_to_language)) {
+      title_to_language[content_title] = [];
+    }
+    title_to_language[content_title].push(obj['medium']);
+
     if (!(content_title in title_to_grade)) {
       title_to_grade[content_title] = [];
     }
@@ -177,6 +191,7 @@ populateStudentData = (data) => {
   for (content_title in title_to_subject) {
     let content_grade = uniqueList(title_to_grade[content_title]);
     let content_subject = uniqueList(title_to_subject[content_title]);
+    let content_language = uniqueList(title_to_language[content_title]);
     let linkToUse = getLinkToUse(title_to_device[content_title], title_to_link[content_title]);
 
     let element = `
@@ -186,11 +201,11 @@ populateStudentData = (data) => {
       <div class="row custom-forced-width custom-grey-font">${title_to_description[content_title]}</div>
       <div class="ui divider"></div>
       <div class="row custom-forced-width">
-        <div class="ui stackable three column grid">
+        <div class="ui stackable four column grid">
           <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/book-icon.svg"></div>${content_subject.join(", ")}</div>
           <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/price-icon.svg"></div>${title_to_cost[content_title]}</div>
           <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/device-icon.svg"></div>${convertDevice(title_to_device[content_title])}</div>
-        </div>
+        <div class="column custom-grey-font left aligned"><div class="ui avatar image custom-logo"><img class="custom-icon-image" src="./static/language-icon.svg"></div>${content_language.join(", ")}</div>
       </div>
     </div>
     `
@@ -203,7 +218,8 @@ onSearch = () => {
     $.ajax({
       url: 'http://localhost:8000/searchTeacherMaterial',
       data: {
-        use_case: $('#usecase-dropdown').dropdown('get values')
+        use_case: $('#usecase-dropdown').dropdown('get values'),
+        medium: $('#medium-dropdown').dropdown('get values')
       },
       success: populateData,
     });
@@ -214,7 +230,8 @@ onSearch = () => {
       url: 'http://localhost:8000/searchStudentMaterial',
       data: {
         subject: $('#subject-dropdown').dropdown('get values'),
-        grade: grade
+        grade: grade,
+        medium: $('#medium-dropdown').dropdown('get values')
       },
       success: populateData,
     });
@@ -235,5 +252,9 @@ $('#subject-dropdown').dropdown({
   "clearable": true
 });
 $('#usecase-dropdown').dropdown({
+  "clearable": true
+});
+
+$('#medium-dropdown').dropdown({
   "clearable": true
 });

@@ -15,6 +15,7 @@ type StudentRecord struct {
 	Subject            string `gorm:"column:subject;not null" json:"subject"`
 	Cost               string `gorm:"column:cost;not null" json:"cost"`
 	Device             uint32 `gorm:"column:device;not null" json:"device"`
+	Medium             string `gorm:"column:medium;not null" json:"medium"`
 }
 
 // TableName returns MySQL table name for this model
@@ -23,7 +24,7 @@ func (StudentRecord) TableName() string {
 }
 
 // GetStudentRecords returns records fetched from database
-func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, error) {
+func GetStudentRecords(grade uint32, subjectArray []string, mediumArray []string) ([]*StudentRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&StudentRecord{})
 	var studentRecords []*StudentRecord
@@ -33,6 +34,9 @@ func GetStudentRecords(grade uint32, subjectArray []string) ([]*StudentRecord, e
 	}
 	if len(subjectArray) != 0 {
 		tx = tx.Where("subject in (?)", subjectArray)
+	}
+	if len(mediumArray) != 0 {
+		tx = tx.Where("medium in (?)", mediumArray)
 	}
 
 	tx.Find(&studentRecords)

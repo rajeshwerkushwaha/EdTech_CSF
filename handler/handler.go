@@ -33,8 +33,9 @@ func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
 	}
 
 	subjectArray, _ := keys["subject[]"]
+	mediumArray, _ := keys["medium[]"]
 
-	studentRecords, err := models.GetStudentRecords(grade, subjectArray)
+	studentRecords, err := models.GetStudentRecords(grade, subjectArray, mediumArray)
 	if err != nil {
 		utils.Logger.WithFields(log.Fields{
 			"grade":        grade,
@@ -66,8 +67,9 @@ func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
 	resp.Header().Add("Content-Type", "application/json")
 
 	useCaseArray, _ := keys["use_case[]"]
+	mediumArray, _ := keys["medium[]"]
 
-	teacherRecords, err := models.GetTeacherRecords(useCaseArray)
+	teacherRecords, err := models.GetTeacherRecords(useCaseArray, mediumArray)
 	if err != nil {
 		utils.Logger.WithFields(log.Fields{
 			"useCaseArray": useCaseArray,
