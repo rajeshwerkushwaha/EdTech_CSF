@@ -8,6 +8,7 @@ output_filename = sys.argv[2] #'final_edtech_csf.csv'
 
 input_data = []
 content_description_col = 2 # can be changed based on its position in the input file.
+content_link_col = 3 # can be changed based on its position in the input file.
 if sys.argv[3] == "Student":
     max_col = 10
 else:
@@ -45,7 +46,7 @@ def process_file(filereader):
         row_data = []
         for count in range(len(input_row)):
             cell_data = input_row[count]
-            if cell_data.count(",") != 0 and count != content_description_col and row_count != 0:
+            if cell_data.count(",") != 0 and count != content_description_col and count!= content_link_col and row_count != 0:
                 processing_flag = 1
                 multi_rows = create_multiple_rows(input_row, cell_data.strip(), count)
                 for row in multi_rows:
