@@ -1,0 +1,43 @@
+LANGUAGE,English
+TITLE,EdTech
+HEADER_UP,Repository of free EdTech content
+HEADER_DOWN,For use by Students and Teachers
+HOME_TEXT,Home
+ABOUT_TEXT,About
+CONTACT_TEXT,Contact
+INDEX_CONTENT,This website is an initiative by MHRD and Central Square Foundation to provide access to online resources for students and teachers so that learning can effectively take place at home.
+STUDENT_BUTTON,Access resources for Students
+TEACHER_BUTTON,Access resources for Teachers
+FILTER_TEXT,Filter
+AUDIENCE_TEXT,I want content for
+DROPDOWN_TEXT,Select
+STUDENT_TEXT,Student
+TEACHER_TEXT,Teacher
+GRADE_FILTER,Who are currently studying in 
+SUBJECT_FILTER,For the subjects
+USECASE_FILTER,For what use case do you want resources
+MEDIUM_FILTER,Required medium of instruction
+MATH_TEXT,Math
+SCIENCE_TEXT,Science
+ENGLISH_TEXT,English
+HINDI_TEXT,Hindi
+MARATHI_TEXT,Marathi
+TAMIL_TEXT,Tamil
+TELUGU_TEXT,Telugu
+BENGALI_TEXT,Bengali
+URDU_TEXT,Urdu
+TEACHING_TEXT,Tools for Teaching
+DEVELOPMENT_TEXT,Professional Development
+ASSESSMENT_TEXT,Tools for Assessment
+SEARCH_BUTTON,Search Content
+CONTACT_TOP,Please reach out to on the email provided below for corrections or questions:
+CONTACT_BOTTOM_ONE,Please use
+CONTACT_BOTTOM_TWO,this form
+CONTACT_BOTTOM_THREE,to suggest products
+ABOUT_ONE,"Due to the national shutdown of schools to combat the COVID pandemic in India, there is immense potential to use technology to ensure students are learning at home."
+ABOUT_TWO,"In an effort to classify and make EdTech solutions easily available to parents, teachers, and students to ensure continued teaching and learning at home, this easy-to-use database1 of free EdTech solutions has been created. All solutions listed are free of cost and categorized for use by teachers and students/parents."
+ABOUT_THREE_ONE,"If you have suggestions for free EdTech solutions that can be included in this list, please fill"
+ABOUT_THREE_TWO,this form
+ABOUT_FOUR,This is a non-exhaustive database of solutions that have not been rigorously evaluated for efficacy
+DISCLAIMER_HEADER,Disclaimer:
+DISCLAIMER_TEXT,"Please read this disclaimer carefully before using the website. All information presented on the website has been taken from publicly available sources. While the information on this website has been verified to the best of our abilities, we cannot guarantee that there are no mistakes or errors. All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk."

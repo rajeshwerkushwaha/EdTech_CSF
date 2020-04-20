@@ -2,10 +2,11 @@
 
 <html>
   <head>
-    <title>EdTech</title>
+    <title>{{TITLE}}</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163788050-1"></script>
     <script>
+      var LANGUAGE = "{{LANGUAGE}}";
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -16,8 +17,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script defer src="./js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <script defer src="./js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
@@ -29,37 +30,37 @@
         </div>
         <div class="left aligned column custom-heading custom-mhrd-text-row">
           <div class="row">
-            <h2 class="custom-grey-font custom-font-family">Repository of free EdTech content</h2>
+            <h2 class="custom-grey-font custom-font-family">{{HEADER_UP}}</h2>
           </div>
           <div class="row">
-            <h4 class="custom-grey-font custom-font-family">For use by Students and Teachers</h4>
+            <h4 class="custom-grey-font custom-font-family">{{HEADER_DOWN}}</h4>
           </div>
         </div>
       </div>
 
-      <div class="row custom-border-radius custom-navbar custom-height-10 middle aligned">
-        <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">Home</div>
-        <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">About</div>
-        <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">Contact</div>
+      <div class="row custom-border-radius custom-navbar custom-height-10 middle aligned custom-navbar">
+        <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{HOME_TEXT}}</div>
+        <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{ABOUT_TEXT}}</div>
+        <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{CONTACT_TEXT}}</div>
         <div class="four wide column"></div>
         <div class="three wide column custom-header-font-size custom-center-align"></div>
       </div>
 
       <div  class="ui grid">
         <div class="custom-grey-font row center aligned custom-text custom-font-family">
-          Due to the national shutdown of schools to combat the COVID pandemic in India, there is immense potential to use technology to ensure students are learning at home.
+          {{ABOUT_ONE}}
           <br><br>
-          In an effort to classify and make EdTech solutions easily available to parents, teachers, and students to ensure continued teaching and learning at home, this easy-to-use database1 of free EdTech solutions has been created. All solutions listed are free of cost and categorized for use by teachers and students/parents.
+          {{ABOUT_TWO}}
         </div>
         <div class = "custom-grey-font row center aligned custom-text custom-mail custom-font-family">
-          If you have suggestions for free EdTech solutions that can be included in this list, please fill  &nbsp; <a href="https://docs.google.com/forms/d/e/1FAIpQLScUv-I1TS4cUTEGTqN2hkomM1RXKt3dU1uqFb7gSakxkt8w5g/viewform"> this form </a>
+          {{ABOUT_THREE_ONE}}  &nbsp; <a href="https://docs.google.com/forms/d/e/1FAIpQLScUv-I1TS4cUTEGTqN2hkomM1RXKt3dU1uqFb7gSakxkt8w5g/viewform"> {{ABOUT_THREE_TWO}} </a>
         </div>
         <div class = "custom-grey-font row center aligned custom-text custom-mail custom-font-family">
-          <sup>1</sup>This is a non-exhaustive database of solutions that have not been rigorously evaluated for efficacy
+          <sup>1</sup>{{ABOUT_FOUR}}
         </div>
         <div class="custom-disclaimer custom-grey-font custom-text custom-small-text row center">
-          <b>Disclaimer:</b>
-  Please read this disclaimer carefully before using the website. All information presented on the website has been taken from publicly available sources. While the information on this website has been verified to the best of our abilities, we cannot guarantee that there are no mistakes or errors. All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk.
+          <b>{{DISCLAIMER_HEADER}}</b>
+          {{DISCLAIMER_TEXT}}
   </div>
       </div>
     </div>

@@ -2,10 +2,11 @@
 
 <html>
   <head>
-    <title>EdTech</title>
+    <title>{{TITLE}}</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163788050-1"></script>
     <script>
+      var LANGUAGE = "{{LANGUAGE}}";
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -29,43 +30,43 @@
         </div>
         <div class="left aligned column custom-heading custom-mhrd-text-row">
           <div class="row">
-            <h2 class="custom-grey-font custom-font-family">Repository of free EdTech content</h2>
+            <h2 class="custom-grey-font custom-font-family">{{HEADER_UP}}</h2>
           </div>
           <div class="row">
-            <h4 class="custom-grey-font custom-font-family">For use by Students and Teachers</h4>
+            <h4 class="custom-grey-font custom-font-family">{{HEADER_DOWN}}</h4>
           </div>
         </div>
       </div>
 
       <div class="row custom-border-radius custom-navbar custom-height-10 middle aligned custom-navbar">
-        <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">Home</div>
-        <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">About</div>
-        <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">Contact</div>
+        <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{HOME_TEXT}}</div>
+        <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{ABOUT_TEXT}}</div>
+        <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{CONTACT_TEXT}}</div>
         <div class="four wide column"></div>
         <div class="three wide column custom-header-font-size custom-center-align"></div>
       </div>
 
       <div id="homepage" class="ui grid">
         <div class="custom-center-align custom-grey-font row center aligned custom-text custom-font-family">
-          This website is an initiative to provide access to online resources for students and teachers so that learning can effectively take place at home.
+          {{INDEX_CONTENT}}
         </div>
          <div class="row ui stackable grid middle aligned">
         <div class="two wide column"></div>
         <div onClick='showFilters(1);' id="custom-click-box" class="four wide column overflow custom-center-align">
           <a class="student custom-link custom-grey-font custom-header-font-size custom-font-family">
-            Access resources for Students
+            {{STUDENT_BUTTON}}
           </a>
         </div>
         <div class="four wide column"></div>
         <div onClick='showFilters(0);' id="custom-click-box" class="four wide column overflow custom-center-align">
           <a class="teacher custom-link custom-grey-font custom-header-font-size custom-font-family">
-            Access resources for Teachers
+            {{TEACHER_BUTTON}}
           </a>
         </div>
       </div>
       <div class="custom-disclaimer custom-grey-font custom-text custom-small-text row center">
-        <b>Disclaimer:</b>
-    Please read this disclaimer carefully before using the website. All information presented on the website has been taken from publicly available sources. While the information on this website has been verified to the best of our abilities, we cannot guarantee that there are no mistakes or errors. All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk.
+        <b>{{DISCLAIMER_HEADER}}</b>
+          {{DISCLAIMER_TEXT}}
     </div>
     </div>
 
@@ -74,25 +75,25 @@
         <!-- FILTER COLUMN -->
         <div id="filter-column" class="four wide column custom-border-radius custom-fixed-size">
           <div class="center aligned row ">
-            <h2 class="custom-grey-font">Filters</h2>
+            <h2 class="custom-grey-font">{{FILTER_TEXT}}</h2>
           </div>
 
           <div class="custom-margin center aligned two column row">
-            <div class="right aligned column custom-font-size custom-grey-font">I want content for</div>
+            <div class="right aligned column custom-font-size custom-grey-font">{{AUDIENCE_TEXT}}</div>
             <div class="left aligned column">
               <select id="user-dropdown" class="ui fluid dropdown">
-                <option value="">Select</option>
-                <option value=1>Student</option>
-                <option value=0>Teacher</option>
+                <option value="">{{DROPDOWN_TEXT}}</option>
+                <option value=1>{{STUDENT_TEXT}}</option>
+                <option value=0>{{TEACHER_TEXT}}</option>
               </select>
             </div>
           </div>
 
           <div id="grade-row" class="center aligned two column row custom-margin ">
-            <div class="right aligned column custom-grey-font">Who are currently studying in </div>
+            <div class="right aligned column custom-grey-font">{{GRADE_FILTER}}</div>
             <div class="left aligned column">
               <select id="grade-dropdown" name="grade-select" class="ui fluid search selection dropdown">
-                <option value="">Select</option>
+                <option value="">{{DROPDOWN_TEXT}}</option>
                 <option value="0">KG</option>
                 <option value="1">Grade 1</option>
                 <option value="2">Grade 2</option>
@@ -113,42 +114,42 @@
           </div>
 
           <div id="subject-row" class="center aligned two column row custom-margin custom-hidden">
-            <div class="right aligned column custom-grey-font">For the subjects</div>
+            <div class="right aligned column custom-grey-font">{{SUBJECT_FILTER}}</div>
             <div class="left aligned column">
               <select id="subject-dropdown" name="subject-select" multiple="" class="ui fluid search selection dropdown">
-                <option value="">Select</option>
-                <option value="Math">Math</option>
-                <option value="Science">Science</option>
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
+                <option value="">{{DROPDOWN_TEXT}}</option>
+                <option value="Math">{{MATH_TEXT}}</option>
+                <option value="Science">{{SCIENCE_TEXT}}</option>
+                <option value="English">{{ENGLISH_TEXT}}</option>
+                <option value="Hindi">{{HINDI_TEXT}}</option>
               </select>
             </div>
           </div>
 
           <div id="usecase-row" class="center aligned two column row custom-margin custom-hidden">
-            <div class="right aligned column custom-grey-font">For what use case do you want resources</div>
+            <div class="right aligned column custom-grey-font">{{USECASE_FILTER}}</div>
             <div class="left aligned column">
               <select id="usecase-dropdown" multiple="" name="usecase-select" class="ui fluid search selection dropdown">
-                <option value="">Select</option>
-                <option value="1">Tools for Teaching</option>
-                <option value="2">Professional Development</option>
-                <option value="3">Tools for Assessment</option>
+                <option value="">{{DROPDOWN_TEXT}}</option>
+                <option value="1">{{TEACHING_TEXT}}</option>
+                <option value="2">{{DEVELOPMENT_TEXT}}</option>
+                <option value="3">{{ASSESSMENT_TEXT}}</option>
               </select>
             </div>
           </div>
 
           <div id="medium-row" class="center aligned two column row custom-margin">
-            <div class="right aligned column custom-grey-font">Required medium of instruction</div>
+            <div class="right aligned column custom-grey-font">{{MEDIUM_FILTER}}</div>
             <div class="left aligned column">
               <select id="medium-dropdown" multiple="" name="medium-select" class="ui fluid search selection dropdown">
-                <option value="">Select</option>
-                <option value="English">English</option>
-                <option value="Hindi">Hindi</option>
-                <option value="Marathi">Marathi</option>
-                <option value="Tamil">Tamil</option>
-                <option value="Telugu">Telugu</option>
-                <option value="Bengali">Bengali</option>
-                <option value="Urdu">Urdu</option>
+                <option value="">{{DROPDOWN_TEXT}}</option>
+                <option value="English">{{ENGLISH_TEXT}}</option>
+                <option value="Hindi">{{HINDI_TEXT}}</option>
+                <option value="Marathi">{{MARATHI_TEXT}}</option>
+                <option value="Tamil">{{TAMIL_TEXT}}</option>
+                <option value="Telugu">{{TELUGU_TEXT}}</option>
+                <option value="Bengali">{{BENGALI_TEXT}}</option>
+                <option value="Urdu">{{URDU_TEXT}}</option>
               </select>
             </div>
           </div>
@@ -156,7 +157,7 @@
           <div id="submit-row" class="row custom-margin custom-hidden">
             <div class="center aligned column">
               <button id="search-button" class="ui fluid primary button">
-                Search Content
+                {{SEARCH_BUTTON}}
               </button>
             </div>
           </div>
@@ -164,23 +165,11 @@
         <!-- CONTENT COLUMN -->
         <div id="data-column" class="twelve wide column">
           <div id="data-grid" class="ui grid container custom-height-74 custom-overflow">
-            <!-- <div onclick="openInNewTab('${title_to_link[content_title]}');" class="row custom-data-box custom-margin custom-pointer">
-              <div class="row custom-forced-width"><div class="column"><h2>content_title</h2></div></div>
-              <div class="row custom-forced-width">${title_to_description[content_title]}</div>
-              <div class="row custom-forced-width">
-                <div class="ui stackable four column grid">
-                  <div class="column">Grade</div>
-                  <div class="column">Subject</div>
-                  <div class="column">Device</div>
-                  <div class="column">Cost</div>
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
         <div id="disclaimer" class="custom-disclaimer-search custom-grey-font custom-text custom-small-text row center">
-          <b>Disclaimer:</b>
-      Please read this disclaimer carefully before using the website. All information presented on the website has been taken from publicly available sources. While the information on this website has been verified to the best of our abilities, we cannot guarantee that there are no mistakes or errors. All information posted is merely for educational and informational purposes. It is not intended as a substitute for professional advice. Should you decide to act upon any information on this website, you do so at your own risk.
+          <b>{{DISCLAIMER_HEADER}}</b>
+          {{DISCLAIMER_TEXT}}
       </div>
       </div>
   </div>

@@ -40,6 +40,13 @@ python convert_data.py YOUR_INPUTFILE.csv YOUR_OUTPUTFILE.csv Student/Teacher
 ```
 The Student/Teacher arguemt specifies whether these are Student records or Teacher records under preprocessing.
 
+## Generating different html for different languages
+The script ```langauge_script.py``` reads the html templates provided in the public directory and generates static html files.
+
+```
+python language_script.py ./public ./Edtech_content.csv /var/www/html
+```
+
 
 ## Docker usage instructions
 - Install [docker](https://docs.docker.com/engine/installation) and [docker-compose](https://docs.docker.com/compose/install).
