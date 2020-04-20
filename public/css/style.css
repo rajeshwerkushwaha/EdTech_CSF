@@ -1,8 +1,27 @@
+.custom-disclaimer{
+  position: fixed !important;
+  bottom: 1vh;
+  line-height: 1;
+}
+
+.custom-disclaimer-search{
+  bottom: 1vh;
+  line-height: 1;
+  position: fixed !important;
+}
+
+.custom-small-text{
+  font-size: 9px !important;
+}
+
+body {
+  background-color: #F5F5F5 !important;
+}
 
 .custom-wrapper{
-  background-color: #F5F5F5 !important;
   opacity: 1;
   height: 110vh;
+  padding-bottom: 2rem;
 }
 
 .custom-navbar{
@@ -107,6 +126,10 @@
   height: 10vh;
 }
 
+.custom-height-74 {
+  height: 74vh;
+}
+
 .custom-height-75 {
   height: 75vh;
 }
@@ -149,12 +172,22 @@
     height: 150vh !important;
   }
 
+  .custom-disclaimer-search{
+    position: relative ! important;
+    font-size: 7px !important;
+  }
+
   #filter-column {
     width: 40% !important;
   }
 
   #data-column {
     width: 60% !important;
+  }
+
+  .custom-disclaimer{
+    position: relative !important;
+    font-size: 7px !important;
   }
 
   .custom-description {
@@ -168,6 +201,11 @@
     height: 150vh !important;
   }
 
+  .custom-disclaimer-search{
+    position: relative ! important;
+    font-size: 7px !important;
+  }
+
   #filter-column {
     width: 100vh !important;
   }
@@ -175,6 +213,11 @@
   #data-column {
     width: 100% !important;
     margin-top: 20px;
+  }
+
+  .custom-disclaimer{
+    position: relative !important;
+    font-size: 7px !important;
   }
 
 }

@@ -28,6 +28,7 @@ gradeDropDownChange = (val) => {
     $('#subject-row').removeClass('custom-hidden');
   } else {
   $('#subject-row').addClass('custom-hidden');
+  $('#subject-dropdown').dropdown('clear');
   }
 }
 
