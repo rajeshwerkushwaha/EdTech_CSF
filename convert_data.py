@@ -2,7 +2,7 @@ import csv
 import sys
 
 if len(sys.argv) != 4:
-    sys.exit("Error: Not enough arguments. There should be 2 arguments for input filename and output filename respectively")
+    sys.exit("Error: Not enough arguments. There should be 3 arguments:input filename, output filename and Student/Teacher to indicate whether they are student or teacher records")
 input_filename = sys.argv[1] #'Website_CBSE_EdTech_caterorization.csv'
 output_filename = sys.argv[2] #'final_edtech_csf.csv'
 
@@ -44,16 +44,17 @@ def process_file(filereader):
     for input_row in filereader:
         row_count = row_count+1
         row_data = []
-        for count in range(len(input_row)):
-            cell_data = input_row[count]
-            if cell_data.count(",") != 0 and count != content_description_col and count!= content_link_col and row_count != 0:
-                processing_flag = 1
-                multi_rows = create_multiple_rows(input_row, cell_data.strip(), count)
-                for row in multi_rows:
-                    processed_data.append(row)
-            else:
-                row_data.append(input_row[count].strip())
-        processed_data.append(row_data)
+        if row_count!= 0 :
+            for count in range(len(input_row)):
+                cell_data = input_row[count]
+                if cell_data.count(",") != 0 and count != content_description_col and count!= content_link_col and row_count != 0:
+                    processing_flag = 1
+                    multi_rows = create_multiple_rows(input_row, cell_data.strip(), count)
+                    for row in multi_rows:
+                        processed_data.append(row)
+                else:
+                    row_data.append(input_row[count].strip())
+            processed_data.append(row_data)
     return processed_data, processing_flag
 
 
