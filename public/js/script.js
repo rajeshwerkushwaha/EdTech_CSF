@@ -87,11 +87,11 @@ parseLink = (linkString) => {
 
 convertDevice = (device) => {
   if (device == "1")
-    return "Smartphone";
+    return SMARTPHONE;
   else if (device == "2")
-    return "Laptop";
+    return LAPTOP;
   else
-    return "Smartphone, Laptop";
+    return SMARTPHONE +", " + LAPTOP;
 }
 
 getLinkToUse = (device, availableLinks) => {
@@ -107,10 +107,11 @@ getLinkToUse = (device, availableLinks) => {
 }
 
 convertUseCase = (useCase) => {
-  if (useCase == "1")   return "Tools for Teaching";
-  if (useCase == "2")   return "Professional Development";
-  if (useCase == "3")   return "Tools for Assessment";
-  if (useCase == "4")   return "Special Needs";
+  console.log(LANGUAGE);
+  if (useCase == "1")   return TEACHING;
+  if (useCase == "2")   return DEVELOPMENT;
+  if (useCase == "3")   return ASSESSMENT;
+  if (useCase == "4")   return SPECIAL;
 }
 
 populateTeacherData = (data) => {

@@ -1,4 +1,6 @@
 LANGUAGE,en,hi
+LAPTOP_TEXT,Laptop,लैपटॉप
+SMARTPHONE_TEXT,Smartphone,स्मार्टफोन
 TITLE,EdTech,EdTech
 HEADER_UP,Repository of free EdTech content,नि: शुल्क EdTech सामग्री का भंडार
 HEADER_DOWN,For use by Students and Teachers,छात्रों और शिक्षकों द्वारा उपयोग के लिए
@@ -13,7 +15,7 @@ AUDIENCE_TEXT,I want content for,मुझे इसके लिए साम�
 DROPDOWN_TEXT,Select,चुनते हैं
 STUDENT_TEXT,Student,छात्र
 TEACHER_TEXT,Teacher,अध्यापक
-GRADE_FILTER,Who are currently studying in ,जो वर्तमान में पढ़ाई कर रहे हैं 
+GRADE_FILTER,Who are currently studying in ,जो वर्तमान में पढ़ाई कर रहे हैं
 SUBJECT_FILTER,For the subjects,विषयों के लिए
 USECASE_FILTER,For what use case do you want resources,किस मामले के लिए आप संसाधन चाहते हैं
 MEDIUM_FILTER,Required medium of instruction,शिक्षा का आवश्यक माध्यम
@@ -29,6 +31,7 @@ URDU_TEXT,Urdu,उर्दू
 TEACHING_TEXT,Tools for Teaching,शिक्षण के लिए उपकरण
 DEVELOPMENT_TEXT,Professional Development,व्यावसायिक विकास
 ASSESSMENT_TEXT,Tools for Assessment,मूल्यांकन के लिए उपकरण
+SPECIAL_TEXT,Special Needs,विशेष ज़रूरत
 SEARCH_BUTTON,Search Content,सामग्री खोजें
 CONTACT_TOP,Please reach out to on the email provided below for corrections or questions:,कृपया सुधार या प्रश्नों के लिए नीचे दिए गए ईमेल पर पहुंचें:
 CONTACT_BOTTOM_ONE,Please use,इस्तेमाल करें
