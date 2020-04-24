@@ -1,6 +1,6 @@
 # EdTech_CSF
 
-Due to the national shutdown of schools to combat the COVID pandemic in India, there is immense potential to use technology to ensure students are learning at home. 
+Due to the national shutdown of schools to combat the COVID pandemic in India, there is immense potential to use technology to ensure students are learning at home.
 
 In an effort to classify and make EdTech solutions easily available to parents, teachers, and students to ensure continued teaching and learning at home, this website provides access to online resources for students and teachers so that learning can effectively take place at home. All solutions listed are free of cost and categorized for use by teachers and students/parents.
 
@@ -36,9 +36,8 @@ migrate -url "mysql://root:YOUR_MYSQL_ROOT_PASSWORD@/edtech_csf" -path ./migrati
 ## Preprocessing the data
 The script ```convert_data.py``` converts the input csv into the proper format for entering into the database.
 ```
-python convert_data.py YOUR_INPUTFILE.csv YOUR_OUTPUTFILE.csv Student/Teacher
+python convert_data.py YOUR_INPUTFILE.csv YOUR_OUTPUTFILE.csv
 ```
-The Student/Teacher arguemt specifies whether these are Student records or Teacher records under preprocessing.
 
 ## Generating different html for different languages
 The script ```langauge_script.py``` reads the html templates provided in the public directory and generates static html files.
