@@ -1,0 +1,2 @@
+ALTER TABLE `TeacherRecords` MODIFY COLUMN `content_link` VARCHAR(255) NOT NULL;
+ALTER TABLE `StudentRecords` MODIFY COLUMN `content_link` VARCHAR(255) NOT NULL;

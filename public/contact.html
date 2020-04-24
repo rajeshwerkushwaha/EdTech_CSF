@@ -14,19 +14,19 @@
       gtag('config', 'UA-163788050-1');
     </script>
     <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
-    <script defer src="./js/script.js"></script>
+    <script defer src="../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
   </head>
   <body>
     <div class="custom-wrapper">
     <div class="ui grid container">
       <div class="custom-margin center aligned row custom-header-height middle aligned">
         <div class="center aligned column custom-mhrd-logo-row">
-          <img id="logo-img" src="./static/training.png">
+          <img id="logo-img" src="../static/training.png">
         </div>
         <div class="left aligned column custom-heading custom-mhrd-text-row">
           <div class="row">
@@ -43,7 +43,15 @@
         <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{ABOUT_TEXT}}</div>
         <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{CONTACT_TEXT}}</div>
         <div class="four wide column"></div>
-        <div class="three wide column custom-header-font-size custom-center-align"></div>
+        <div class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">
+          <div id="language-dropdown" class="ui inline dropdown">
+            <div class="text custom-header-font-size custom-center-align custom-pointer custom-font-family">Eng / हिं </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+            <div class="item" data-text="en">English</div>
+            <div class="item" data-text="hi">हिंदी</div>
+          </div></div>
+      </div>
       </div>
 
       <div id="homepage" class="ui grid">

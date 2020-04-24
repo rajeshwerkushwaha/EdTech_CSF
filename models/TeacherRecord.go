@@ -14,6 +14,7 @@ type TeacherRecord struct {
 	Cost               string `gorm:"column:cost;not null" json:"cost"`
 	Device             uint32 `gorm:"column:device;not null" json:"device"`
 	Medium             string `gorm:"column:medium;not null" json:"medium"`
+	Language             string `gorm:"column:language;not null" json:"language"`
 }
 
 // TableName returns MySQL table name for this model
@@ -22,7 +23,7 @@ func (TeacherRecord) TableName() string {
 }
 
 // GetTeacherRecords returns records fetched from database
-func GetTeacherRecords(useCaseArray []string, mediumArray []string) ([]*TeacherRecord, error) {
+func GetTeacherRecords(useCaseArray []string, mediumArray []string, language string) ([]*TeacherRecord, error) {
 	db := utils.GetDB()
 	tx := db.Model(&TeacherRecord{})
 	var teacherRecords []*TeacherRecord
@@ -33,6 +34,8 @@ func GetTeacherRecords(useCaseArray []string, mediumArray []string) ([]*TeacherR
 	if len(mediumArray) != 0 {
 		tx = tx.Where("medium in (?)", mediumArray)
 	}
+
+		tx = tx.Where("language = ?", language)
 
 	tx.Find(&teacherRecords)
 	return teacherRecords, nil
