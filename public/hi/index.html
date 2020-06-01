@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>EdTech</title>
+    <!-- Prod Container ID: GTM-PHST9N8-->
+    <!-- Dev Container ID: GTM-MWTM74X-->
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MWTM74X');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163788050-2"></script>
+    <script>
+      var PAGE = "index";
+      var LANGUAGE = "hi";
+      var LAPTOP = "लैपटॉप"
+      var SMARTPHONE = "स्मार्टफोन";
+      var TEACHING = "शिक्षण के लिए उपकरण";
+      var DEVELOPMENT = "व्यावसायिक विकास";
+      var ASSESSMENT = "मूल्यांकन के लिए उपकरण";
+      var SPECIAL = "विशेष ज़रूरत";
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-163788050-2');
+    </script>
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel='shortcut icon' type='image/x-icon' href='../static/favicon.ico' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <script defer src="../js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <meta name="description" content="This website is an initiative by Central Square Foundation to provide access to online resources for students and teachers so that learning can effectively take place at home.">
+    <meta name="keywords" content="EdTech, educational, education, covid-19, covid, online-education, onnline_education, online education">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWTM74X"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="custom-wrapper">
+    <div class="ui grid container">
+
+      <div class="header-upper-div"></div>
+
+      <div class="custom-margin center aligned row custom-header-height middle aligned">
+        <div class="center aligned column custom-mhrd-logo-row logo-img">
+          <img id="logo-img" src="../static/audio_book.svg">
+        </div>
+        <div class="left aligned column custom-heading custom-mhrd-text-row">
+          <div class="row">
+            <h2 class="custom-grey-font custom-font-family">नि: शुल्क EdTech सामग्री का भंडार</h2>
+          </div>
+          <div class="row">
+            <h4 class="custom-grey-font custom-font-family">छात्रों और शिक्षकों द्वारा उपयोग के लिए</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row custom-border-radius custom-navbar custom-height-10 middle aligned custom-navbar">
+        <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">घर</div>
+        <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">के बारे में</div>
+        <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">संपर्क करें</div>
+        <div class="two wide column"></div>
+        <div class="five wide column custom-header-font-size right floated right aligned custom-pointer custom-font-family">
+          <div id="language-dropdown" class="ui inline dropdown">
+            <div class="text custom-header-font-size custom-center-align custom-pointer custom-font-family">Eng / हिं </div>
+            <i class="dropdown icon"></i>
+            <div class="menu">
+            <div class="item" data-text="en">English</div>
+            <div class="item" data-text="hi">हिंदी</div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div id="homepage" class="ui grid">
+        <div class="row">
+          <img class="background-img" src="../static/background.png">
+          <div class="eight wide column row background-text">
+            <div class="custom-center-align custom-grey-font row centered aligned custom-text custom-font-family">
+              यह वेबसाइट छात्रों और शिक्षकों के लिए ऑनलाइन संसाधनों तक पहुंच प्रदान करने के सेंट्रल स्क्वायर फाउंडेशन द्वारा एक पहल है ताकि सीखने को प्रभावी ढंग से घर पर किया जा सके।
+            </div>
+            <br><br>
+            <div class="row ui two column grid mainbuttons center aligned">
+              <div class="column">
+                  <button onClick='showFilters(1);' class="huge ui button access-resourse-button">छात्रों के लिए संसाधन प्राप्त करें</button>
+              </div>
+              <div class="column">
+                  <button onClick='showFilters(0);' class="huge ui button access-resourse-button">शिक्षकों के लिए संसाधन प्राप्त करें</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="main" class = "custom-hidden ui grid container">
+        <div class="twelve wide column right floated">
+          <div class="" id="example1">
+            <!-- FILTER COLUMN -->
+            <div class="ui left attached rail" style="">
+              <div class="ui sticky" style="width: 100% !important; height: 262.531px !important; left: 163px;">
+                <div id="filter-column" class="custom-border-radius custom-fixed-size">
+                  <div class="center aligned row ">
+                    <h2 class="custom-grey-font">फ़िल्टर</h2>
+                  </div>
+
+                  <div class="custom-margin center aligned two column row">
+                    <div class="right aligned column custom-font-size custom-grey-font">मुझे इसके लिए सामग्री चाहिए</div>
+                    <div class="left aligned column">
+                      <select id="user-dropdown" class="ui fluid dropdown">
+                        <option value="">चुनते हैं</option>
+                        <option value=1>छात्र</option>
+                        <option value=0>अध्यापक</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div id="grade-row" class="center aligned two column row custom-margin ">
+                    <div class="right aligned column custom-grey-font">जो वर्तमान में पढ़ाई कर रहे हैं</div>
+                    <div class="left aligned column">
+                      <select id="grade-dropdown" name="grade-select" class="ui fluid search selection dropdown">
+                        <option value="">चुनते हैं</option>
+                        <option value="0">KG</option>
+                        <option value="1">Grade 1</option>
+                        <option value="2">Grade 2</option>
+                        <option value="3">Grade 3</option>
+                        <option value="4">Grade 4</option>
+                        <option value="5">Grade 5</option>
+                        <option value="6">Grade 6</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                        <option value="14">JEE/NEET</option>
+                        <option value="15">Speaking/Reading</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div id="subject-row" class="center aligned two column row custom-margin custom-hidden">
+                    <div class="right aligned column custom-grey-font">विषयों के लिए</div>
+                    <div class="left aligned column">
+                      <select id="subject-dropdown" name="subject-select" multiple="" class="ui fluid search selection dropdown">
+                        <option value="">चुनते हैं</option>
+                        <option value="Math">गणित</option>
+                        <option value="Science">विज्ञान</option>
+                        <option value="English">अंग्रेज़ी</option>
+                        <option value="Hindi">हिन्दी</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div id="usecase-row" class="center aligned two column row custom-margin custom-hidden">
+                    <div class="right aligned column custom-grey-font">किस मामले के लिए आप संसाधन चाहते हैं</div>
+                    <div class="left aligned column">
+                      <select id="usecase-dropdown" multiple="" name="usecase-select" class="ui fluid search selection dropdown">
+                        <option value="">चुनते हैं</option>
+                        <option value="1">शिक्षण के लिए उपकरण</option>
+                        <option value="2">व्यावसायिक विकास</option>
+                        <option value="3">मूल्यांकन के लिए उपकरण</option>
+                        <!-- <option value="4">विशेष ज़रूरत</option> -->
+                      </select>
+                    </div>
+                  </div>
+
+                  <div id="medium-row" class="center aligned two column row custom-margin">
+                    <div class="right aligned column custom-grey-font">शिक्षा का आवश्यक माध्यम</div>
+                    <div class="left aligned column">
+                      <select id="medium-dropdown" multiple="" name="medium-select" class="ui fluid search selection dropdown">
+                        <option value="">चुनते हैं</option>
+                        <option value="Hindi">हिन्दी</option>
+                        <option value="English">अंग्रेज़ी</option>
+                        <option value="Bengali">बंगाली</option>
+                        <option value="Marathi">मराठी</option>
+                        <option value="Telugu">तेलुगू</option>
+                        <option value="Tamil">तामिल</option>
+                        <option value="Gujarati">गुजराती</option>
+                        <option value="Urdu">उर्दू</option>
+                        <option value="Kannada">कन्नड़</option>
+                        <option value="Odia">उड़िया</option>
+                        <option value="Malayalam">मलयालम</option>
+                        <option value="Punjabi">पंजाबी</option>
+                      </select>
+                    </div>
+                  </div>
+        			    <div id="submit-row" class="row custom-margin custom-hidden">
+                    	<div class="center aligned column">
+        		            <button id="search-button" class="ui fluid primary button">
+                    			सामग्री खोजें
+                    		</button>
+        	            </div>
+                    </div>
+                 </div>
+               </div>
+             </div>
+          <!-- FILTER COLUMN end-->
+
+         <!-- CONTENT COLUMN -->
+          <div id="data-column" class="twelve wide column">
+            <div id="data-grid" class="ui cards centered"></div>
+            <div class="youtube-divider">
+              <div style="padding-bottom: 5px;"><i class="youtube icon"></i>Youtube Channels</div>
+            </div>
+            <div class="no-data"><p>क्षमा करें, चयनित फ़िल्टर के लिए कोई संसाधन नहीं मिला। कृपया फ़िल्टर बदलें और फिर से खोजें!</p></div>
+            <div id="data-grid-youtube" class="ui cards centered"></div>
+          </div>
+          <!-- CONTENT COLUMN end-->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Footer start-->
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="six wide column">
+              <h3 class="ui inverted header">हमारा अनुसरण करें</h3>
+              <div class="ui inverted link list">
+                <a href="https://www.facebook.com/CentralSquareFoundation/" target="_blank" class="socialicon facebook"><i class="facebook icon"></i></a>
+                <a href="https://www.linkedin.com/company/central-square-foundation/" target="_blank" class="socialicon linkedin"><i class="linkedin icon"></i></a>
+                <a href="https://twitter.com/CSF_India" target="_blank" class="socialicon twitter"><i class="twitter icon"></i></a>
+                <a href="https://www.youtube.com/channel/UCGvMM_QGovzdJddFHo53UNA" target="_blank" class="socialicon youtube"><i class="youtube icon"></i></a>
+              </div>
+            </div>
+            <div class="ten wide column">
+              <h2 class="ui inverted header">EdTech</h2>
+              <p>यह वेबसाइट छात्रों और शिक्षकों के लिए ऑनलाइन संसाधनों तक पहुंच प्रदान करने के सेंट्रल स्क्वायर फाउंडेशन द्वारा एक पहल है ताकि सीखने को प्रभावी ढंग से घर पर किया जा सके।</p>
+              <b>अस्वीकरण:</b>
+              <p class="disclaimer">वेबसाइट का उपयोग करने से पहले कृपया इस अस्वीकरण को ध्यान से पढ़ें। वेबसाइट पर प्रस्तुत सभी जानकारी सार्वजनिक रूप से उपलब्ध स्रोतों से ली गई है। हालांकि इस वेबसाइट की जानकारी को हमारी सर्वोत्तम क्षमताओं में सत्यापित किया गया है, लेकिन हम इस बात की गारंटी नहीं दे सकते कि कोई गलती या त्रुटि नहीं है। पोस्ट की गई सभी जानकारी केवल शैक्षिक और सूचनात्मक उद्देश्यों के लिए है। यह पेशेवर सलाह के विकल्प के रूप में अभिप्रेत नहीं है। क्या आपको इस वेबसाइट पर किसी भी जानकारी पर कार्रवाई करने का निर्णय लेना चाहिए, आप ऐसा अपने जोखिम पर करते हैं।</p>
+            </div>
+          </div>
+          <div class="ui inverted section divider"></div>
+          <div class="ui one column centered grid"><div class="logo-img"><img id="logo-img" src="../static/audio_book.svg"></div></div>
+          <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">संपर्क करें</a>
+            <a class="item" href="#">नियम और शर्तें</a>
+            <a class="item" href="#">गोपनीयता नीति</a>
+          </div>
+        </div>
+      </div>
+<!-- Footer end-->
+
+
+  </body>
+</html>

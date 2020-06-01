@@ -3,7 +3,15 @@
 <html>
   <head>
     <title>{{TITLE}}</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MWTM74X');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163788050-1"></script>
     <script>
       var LANGUAGE = "{{LANGUAGE}}";
@@ -26,8 +34,14 @@
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <script defer src="../js/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <meta name="description" content="This website is an initiative by MHRD and Central Square Foundation to provide access to online resources for students and teachers so that learning can effectively take place at home.">
+    <meta name="keywords" content="EdTech, educational, education, covid-19, covid, online-education, onnline_education, online education">
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWTM74X"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="custom-wrapper">
     <div class="ui grid container">
       <div class="custom-margin center aligned row custom-header-height middle aligned">
@@ -48,15 +62,16 @@
         <div onclick="sameWindowLink('index.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{HOME_TEXT}}</div>
         <div onclick="sameWindowLink('about.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{ABOUT_TEXT}}</div>
         <div onclick="sameWindowLink('contact.html');" class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">{{CONTACT_TEXT}}</div>
-        <div class="four wide column"></div>
-        <div class="three wide column custom-header-font-size custom-center-align custom-pointer custom-font-family">
+        <div class="two wide column"></div>
+        <div class="five wide column custom-header-font-size right floated right aligned custom-pointer custom-font-family">
           <div id="language-dropdown" class="ui inline dropdown">
             <div class="text custom-header-font-size custom-center-align custom-pointer custom-font-family">Eng / हिं </div>
             <i class="dropdown icon"></i>
             <div class="menu">
             <div class="item" data-text="en">English</div>
             <div class="item" data-text="hi">हिंदी</div>
-          </div></div>
+          </div>
+        </div>
       </div>
       </div>
 
@@ -64,28 +79,18 @@
         <div class="custom-center-align custom-grey-font row center aligned custom-text custom-font-family">
           {{INDEX_CONTENT}}
         </div>
-         <div class="row ui stackable grid middle aligned">
-        <div class="two wide column"></div>
-        <div onClick='showFilters(1);' id="custom-click-box" class="four wide column overflow custom-center-align">
-          <a class="student custom-link custom-grey-font custom-header-font-size custom-font-family">
-            {{STUDENT_BUTTON}}
-          </a>
-        </div>
-        <div class="four wide column"></div>
-        <div onClick='showFilters(0);' id="custom-click-box" class="four wide column overflow custom-center-align">
-          <a class="teacher custom-link custom-grey-font custom-header-font-size custom-font-family">
-            {{TEACHER_BUTTON}}
-          </a>
+        <div class="row ui one column grid mainbuttons center aligned">
+          <div class="column">
+            <button onClick='showFilters(1);' class="huge ui button">{{STUDENT_BUTTON}}</button>
+          </div>
+          <div class="column">
+            <button onClick='showFilters(0);' class="huge ui button">{{TEACHER_BUTTON}}</button>
+          </div>
         </div>
       </div>
-      <div class="custom-disclaimer custom-grey-font custom-text custom-small-text row center">
-        <b>{{DISCLAIMER_HEADER}}</b>
-          {{DISCLAIMER_TEXT}}
-    </div>
-    </div>
 
       <div id="main" class = "custom-hidden ui grid container">
-      <div class="row custom-height-75">
+      <div class="row">
         <!-- FILTER COLUMN -->
         <div id="filter-column" class="four wide column custom-border-radius custom-fixed-size">
           <div class="center aligned row ">
@@ -180,17 +185,53 @@
         </div>
         <!-- CONTENT COLUMN -->
         <div id="data-column" class="twelve wide column">
-          <div id="data-grid" class="ui grid container custom-height-74 custom-overflow">
+          <div id="data-grid" class="ui cards centered"></div>
+          <div class="youtube-divider">
+            <div style="padding-bottom: 5px;"><i class="youtube icon"></i>Youtube Channels</div>
           </div>
+          <div class="no-data"><p>Sorry, no resources found for the selected filter. Please change the filter and search again!</p></div>
+          <div id="data-grid-youtube" class="ui cards centered"></div>
         </div>
-        <div id="disclaimer" class="custom-disclaimer-search custom-grey-font custom-text custom-small-text row center">
-          <b>{{DISCLAIMER_HEADER}}</b>
-          {{DISCLAIMER_TEXT}}
-      </div>
       </div>
   </div>
 </div>
 </div>
 </div>
+
+<!-- Footer start-->
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="six wide column">
+              <h3 class="ui inverted header">{{FOLLOW_US}}</h3>
+              <div class="ui inverted link list">
+                <a href="#" class="socialicon facebook"><i class="facebook icon"></i></a>
+                <a href="#" class="socialicon linkedin"><i class="linkedin icon"></i></a>
+                <a href="#" class="socialicon twitter"><i class="twitter icon"></i></a>
+                <a href="#" class="socialicon youtube"><i class="youtube icon"></i></a>
+              </div>
+            </div>
+            <div class="ten wide column">
+              <h2 class="ui inverted header">EdTech</h2>
+              <p>{{INDEX_CONTENT}}</p>
+
+              <b>{{DISCLAIMER_HEADER}}</b>
+              <p class="disclaimer">{{DISCLAIMER_TEXT}}</p>
+            </div>
+          </div>
+          <div class="ui inverted section divider"></div>
+          <img src="../static/training.png" class="ui centered image">
+          <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">{{CONTACT_US}}</a>
+            <a class="item" href="#">{{TERMS_AND_CONDITIONS}}</a>
+            <a class="item" href="#">{{PRIVACY_POLICY}}</a>
+          </div>
+        </div>
+      </div>
+
+<!-- Footer end-->
+
+
   </body>
 </html>

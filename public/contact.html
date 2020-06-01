@@ -3,7 +3,14 @@
 <html>
   <head>
     <title>{{TITLE}}</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-MWTM74X');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163788050-1"></script>
     <script>
       var LANGUAGE = "{{LANGUAGE}}";
@@ -20,8 +27,14 @@
     <script defer src="../js/script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+    <meta name="description" content="This website is an initiative by MHRD and Central Square Foundation to provide access to online resources for students and teachers so that learning can effectively take place at home.">
+    <meta name="keywords" content="EdTech, educational, education, covid-19, covid, online-education, onnline_education, online education">
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWTM74X"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="custom-wrapper">
     <div class="ui grid container">
       <div class="custom-margin center aligned row custom-header-height middle aligned">
@@ -61,12 +74,42 @@
         <div class = "custom-grey-font row center aligned custom-text custom-mail custom-font-family">
           {{CONTACT_BOTTOM_ONE}} &nbsp; <a href="https://docs.google.com/forms/d/e/1FAIpQLScUv-I1TS4cUTEGTqN2hkomM1RXKt3dU1uqFb7gSakxkt8w5g/viewform"> {{CONTACT_BOTTOM_TWO}} </a> &nbsp; {{CONTACT_BOTTOM_THREE}}
         </div>
-        <div class="custom-disclaimer custom-grey-font custom-text custom-small-text row center">
-          <b>{{DISCLAIMER_HEADER}}</b>
-          {{DISCLAIMER_TEXT}}
-  </div>
       </div>
     </div>
   </div>
+
+<!-- Footer start-->
+
+    <div class="ui inverted vertical footer segment">
+        <div class="ui center aligned container">
+          <div class="ui stackable inverted divided grid">
+            <div class="six wide column">
+              <h3 class="ui inverted header">{{FOLLOW_US}}</h3>
+              <div class="ui inverted link list">
+                <a href="#" class="socialicon facebook"><i class="facebook icon"></i></a>
+                <a href="#" class="socialicon linkedin"><i class="linkedin icon"></i></a>
+                <a href="#" class="socialicon twitter"><i class="twitter icon"></i></a>
+                <a href="#" class="socialicon youtube"><i class="youtube icon"></i></a>
+              </div>
+            </div>
+            <div class="ten wide column">
+              <h2 class="ui inverted header">EdTech</h2>
+              <p>{{INDEX_CONTENT}}</p>
+
+              <b>{{DISCLAIMER_HEADER}}</b>
+              <p class="disclaimer">{{DISCLAIMER_TEXT}}</p>
+            </div>
+          </div>
+          <div class="ui inverted section divider"></div>
+          <img src="../static/training.png" class="ui centered image">
+          <div class="ui horizontal inverted small divided link list">
+            <a class="item" href="#">{{CONTACT_US}}</a>
+            <a class="item" href="#">{{TERMS_AND_CONDITIONS}}</a>
+            <a class="item" href="#">{{PRIVACY_POLICY}}</a>
+          </div>
+        </div>
+      </div>
+
+<!-- Footer end-->
   </body>
 </html>

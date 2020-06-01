@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS StudentRecords (
   content_link varchar(255) NOT NULL,
   start_grade int(3),
   end_grade int(3),
-  subject varchar(255),  
+  subject varchar(255),
   PRIMARY KEY(id)
 ) AUTO_INCREMENT=1;

@@ -12,6 +12,10 @@ import (
 
 // SearchStudentMaterial returns content after filtering from StudentContent
 func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
+
+	//to enalbe cors
+	enableCors(&resp)
+
 	keys := req.URL.Query()
 	resp.Header().Add("Content-Type", "application/json")
 	var grade uint32
@@ -73,6 +77,10 @@ func SearchStudentMaterial(resp http.ResponseWriter, req *http.Request) {
 
 // SearchTeacherMaterial returns content after filtering from TeacherContent
 func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
+
+	//to enalbe cors
+	enableCors(&resp)
+
 	keys := req.URL.Query()
 	resp.Header().Add("Content-Type", "application/json")
 
@@ -112,4 +120,8 @@ func SearchTeacherMaterial(resp http.ResponseWriter, req *http.Request) {
 
 	resp.WriteHeader(200)
 	resp.Write(jsonData)
+}
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
