@@ -2,7 +2,7 @@ let user = -1; // -1 Represents Unselected. 0 Represents Teachers. 1 Represents 
 const TEACHER = 0;
 const STUDENT = 1;
 // const API_LINK = 'https://indiaedtech.org/'
-const API_LINK = 'http://http://167.71.226.102/'
+const API_LINK = 'http://167.71.226.102/'
 
 let main_buttons_en = `<div class="custom-center-align custom-grey-font row center aligned custom-text custom-font-family">
   This website categorizes free EdTech resources available for students and teachers so learning can effectively take place at home.
